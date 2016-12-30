@@ -1,5 +1,5 @@
 /**
- * Reverse digits of an integer.
+ * 07. Reverse digits of an integer.
  * @param {number} x
  * @return {number}
  */
