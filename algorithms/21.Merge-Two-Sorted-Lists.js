@@ -1,30 +1,25 @@
 /**
- * 21. Merge Two Sorted Lists -dev 
+ * 21. Merge Two Sorted Lists 
  * Merge two sorted linked lists and return it as a new list. The new list should be made by splicing together the nodes of the first two lists.
  * @param {ListNode} l1
  * @param {ListNode} l2
  * @return {ListNode}
  */
 var mergeTwoLists = function(l1, l2) {
-    console.log(l1);
-    console.log(l2);
     var getValue = function(list, node1, node2) {
         var node = new ListNode(0);
         if(node1 === null && node2 === null) {}
-        else if (node1.val === undefined && node2.val === undefined) {}
         else if(node1 === null || node1.val === undefined) {
-                list.next = node2;
+            list.next = node2;
         }
-        else if(node2 === null || node2.val === undefined){
-            console.log(node1);
-            console.log(list);
+        else if(node2 === null || node2.val === undefined) {
             list.next = node1;
         } 
         else if(node1.val > node2.val) {
-                node.val = node2.val;
-                node2 = node2.next;
-                list.next = node;
-                getValue(node, node1, node2);                
+            node.val = node2.val;
+            node2 = node2.next;
+            list.next = node;
+            getValue(node, node1, node2);                
         }
         else if(node1.val <= node2.val) {
             node.val = node1.val;
@@ -77,8 +72,8 @@ listToString(l2);
 listToString(mergeTwoLists(l1, l2)); // 2->3->3->3->5->6->7->8->11->12
 
 //test 
-var l3 = new ListNode();
-var l4 = new ListNode();
+var l3 = null;
+var l4 = null;
 
 listToString(l3);
 listToString(l4);
@@ -86,7 +81,7 @@ listToString(mergeTwoLists(l3, l4)); // []
 
 //test 
 var l5 = new ListNode(1);
-var l6 = new ListNode();
+var l6 = null;
 
 listToString(l5);
 listToString(l6);
