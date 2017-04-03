@@ -38,4 +38,4 @@ jspm_packages
 
 
 .DS_Store
-_runLeetcode.html
+*.html
