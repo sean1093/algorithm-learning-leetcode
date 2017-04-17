@@ -8,6 +8,8 @@
  * @param {string} t
  * @return {boolean}
  */
+//same as 290. Word Pattern
+//create two map to save {s, t} / {t, s}
 var isIsomorphic = function(s, t) {
     s = s.split("");
     t = t.split("");
