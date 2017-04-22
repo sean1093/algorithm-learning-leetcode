@@ -37,7 +37,7 @@ var lengthOfLongestSubstring = function(s) {
             subStr+= str[j];
         }
         if(subStr.length > maxStr.length ) {
-                maxStr = subStr; 
+            maxStr = subStr; 
         }
     }
     return flag ? s.length : maxStr.length;
