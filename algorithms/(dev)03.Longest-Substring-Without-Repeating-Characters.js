@@ -10,63 +10,45 @@
  * @param {string} s
  * @return {number}
  */
+ /*
+透過移動 start & end 來記錄每次的不重複 substring，當出現重複元素就加到 hashMap 或是更新 map 已經有的值
+ */
 var lengthOfLongestSubstring = function(s) {
+    if(s.length <= 1) return s.length;
     var str = s.split("");
     var hashMap = {};
-    var length = 0;
     var subStr = "";
     var maxStr = "";
     var start = 0;
     var end = 0;
-
+    var flag = true;
     for( var i = 0; i < str.length; i++ ) {
         if(!(str[i] in hashMap)) {
             hashMap[str[i]] = i;
-            end = i;
-            subStr += str[i];
         }
         else {
-            if((end - start) >= length ) {
-                length = end - start;
+            flag = false;                       
+            start = (hashMap[str[i]] +1) > start ? (hashMap[str[i]] +1) : start; // reset start
+            hashMap[str[i]] = i;// update hash map         
+        }
+        end = i;
+        subStr = "";
+        for(var j = start; j<=end; j++) {
+            subStr+= str[j];
+        }
+        if(subStr.length > maxStr.length ) {
                 maxStr = subStr; 
-            }
-            subStr = str[i];
-            start = hashMap[str[i]] +1; // reset start
-            hashMap[str[i]] = i;// update hash map
-            end = i;
         }
     }
-    return maxStr;
-
-
-
-    // var stringArray = s.split("");
-    // var redundancy = {};
-    // var maxStr = "";
-    // var str = ""
-    // for( var i = 0; i < stringArray.length; i++ ) {
-    //     // console.log(stringArray[i]);
-    //     if( stringArray[i] in redundancy) {
-    //         if( maxStr.length < str.length) {
-    //             maxStr = str;
-    //         }
-    //         // i = redundancy[stringArray[i]] + 1;
-    //         // break;
-    //         str = stringArray[i];
-    //     }
-    //     else {
-    //         str += stringArray[i];
-    //         //put into redundancy
-    //         redundancy[stringArray[i]] = i; 
-    //     }
-    //     // console.log("----maxStr: "+maxStr);
-    //     // console.log("str: "+str);
-    //     // console.log(redundancy);
-    // }
-    // return maxStr;
+    return flag ? s.length : maxStr.length;
 };
 
-console.log(lengthOfLongestSubstring("abcabcbb")); //return abc
-console.log(lengthOfLongestSubstring("bbbbb")); //return b
-console.log(lengthOfLongestSubstring("pwwkew")); //return wke
-console.log(lengthOfLongestSubstring("abcabdsdddcbb")); //return cabds
+console.log(lengthOfLongestSubstring("aab")); // 2
+console.log(lengthOfLongestSubstring("abcabcbb")); // 3
+console.log(lengthOfLongestSubstring("bbbbb")); // 1
+console.log(lengthOfLongestSubstring("pwwkew")); // 3
+console.log(lengthOfLongestSubstring("abcabdsdddcbb")); // 5
+console.log(lengthOfLongestSubstring("a")); // 1
+console.log(lengthOfLongestSubstring("abbcdb")); // 3
+console.log(lengthOfLongestSubstring("ab")); // 2
+console.log(lengthOfLongestSubstring("")); // 0
