@@ -4,9 +4,11 @@
  * @param {number[]} nums
  * @return {number}
  */
+//直接相加找到最大值
 var maxSubArray = function(nums) {
-    var sum = 0;
-    var subSum = 0;
+    if(nums.length == 1) return nums[0];
+    var sum = -Infinity;
+    var subSum = -Infinity;
     for(var i=0; i<nums.length; i++) {
         if (subSum < 0) {
             subSum = 0;
