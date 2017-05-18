@@ -5,20 +5,38 @@
  */
 
 var deleteDuplicates = function(head) {
-    if(head !== null) {
-        // console.log(head.val);
-        if(head.next !== null) {
-            var child = head.next;
-            if(head.val == child.val) {
-                head.next = child.next;
-                deleteDuplicates(head);
-            }
-            else {
-                deleteDuplicates(child);
-            }
+
+    var node = new ListNode();
+    node.next = head;
+
+
+    var current = head;
+    var pre = head;
+    
+    var temp = 0;
+
+    while(current !== null) {
+
+        if(current.next !== null && current.next.val == current.val) {
+            
+        }
+        else {
+           
+        }
+
+
+        // console.log("val: "+current.val);
+        current = current.next;
+
+        temp++;
+        console.log("temp: "+temp);
+        if(temp > 20) {
+            break;
         }
     }
-    return head;     
+    console.log(node.next);
+    return node.next;
+    
 };
 
 
@@ -43,34 +61,34 @@ function ListNode(val) {
 }
 
 
-var l1 = new ListNode(1);
-l1.next = new ListNode(1);
-l1.next.next = new ListNode(2);
-listToString(deleteDuplicates(l1)); // 2 
+// var l1 = new ListNode(1);
+// l1.next = new ListNode(1);
+// l1.next.next = new ListNode(2);
+// listToString(deleteDuplicates(l1)); // 2 
 
-var l2 = new ListNode(1);
-l2.next = new ListNode(1);
-l2.next.next = new ListNode(2);
-l2.next.next.next = new ListNode(3);
-l2.next.next.next.next = new ListNode(3);
-l2.next.next.next.next.next = new ListNode(3);
-listToString(deleteDuplicates(l2)); // 2-
+// var l2 = new ListNode(1);
+// l2.next = new ListNode(1);
+// l2.next.next = new ListNode(2);
+// l2.next.next.next = new ListNode(3);
+// l2.next.next.next.next = new ListNode(3);
+// l2.next.next.next.next.next = new ListNode(3);
+// listToString(deleteDuplicates(l2)); // 2
 
-var l3 = new ListNode(1);
-l3.next = new ListNode(1);
-l3.next.next = new ListNode(2);
-l3.next.next.next = new ListNode(2);
-l3.next.next.next.next = new ListNode(2);
-l3.next.next.next.next.next = new ListNode(2);
-listToString(deleteDuplicates(l3)); // null 
+// var l3 = new ListNode(1);
+// l3.next = new ListNode(1);
+// l3.next.next = new ListNode(2);
+// l3.next.next.next = new ListNode(2);
+// l3.next.next.next.next = new ListNode(2);
+// l3.next.next.next.next.next = new ListNode(2);
+// listToString(deleteDuplicates(l3)); // null 
 
-var l4 = new ListNode(1);
-l4.next = new ListNode(1);
-l4.next.next = new ListNode(2);
-l4.next.next.next = new ListNode(2);
-l4.next.next.next.next = new ListNode(2);
-l4.next.next.next.next.next = new ListNode(3);
-listToString(deleteDuplicates(l4)); // 3 
+// var l4 = new ListNode(1);
+// l4.next = new ListNode(1);
+// l4.next.next = new ListNode(2);
+// l4.next.next.next = new ListNode(2);
+// l4.next.next.next.next = new ListNode(2);
+// l4.next.next.next.next.next = new ListNode(3);
+// listToString(deleteDuplicates(l4)); // 3 
 
 var l5 = new ListNode(1);
 l5.next = new ListNode(2);
@@ -79,6 +97,6 @@ l5.next.next.next = new ListNode(3);
 l5.next.next.next.next = new ListNode(4);
 l5.next.next.next.next.next = new ListNode(4);
 l5.next.next.next.next.next.next = new ListNode(5);
-listToString(deleteDuplicates(l5)); // 2 
+listToString(deleteDuplicates(l5)); // 1->2->5
 
-listToString(deleteDuplicates(null)); // null
+// listToString(deleteDuplicates(null)); // null
