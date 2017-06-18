@@ -4,7 +4,17 @@
  * @param {number} numRows
  * @return {number[][]}
  */
- // [i,j] = [i-1,j-1] + [i-1, j]
+
+// Q: 給予 numRows ，畫出 Pascal's Triangle 
+// ex: r = 3
+// result:
+//   [1]
+//  [1,1]
+// [1,2,1]
+
+// A: 先找規律 [i,j] = [i-1,j-1] + [i-1, j]
+
+
 var generate = function(numRows) {   
     if(numRows === 0) return [];
     var res = [[1]];
