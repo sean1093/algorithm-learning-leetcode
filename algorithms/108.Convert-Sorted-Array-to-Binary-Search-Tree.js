@@ -3,6 +3,16 @@
  * @param {number[]} nums
  * @return {TreeNode}
  */
+
+// Binary Search Tree
+// 1.左子樹不為空，則左子樹的所有節點的鍵值(Key)小於根節點的鍵值
+// 2.右子樹不為空，則右子樹的所有節點的鍵值(Key)大於根節點的鍵值
+// 3.左右子樹也都是二元搜索
+// 4.節點不會有重複的鍵值
+
+// Q: 把一個排序好的array轉成Binary Search Tree
+// A: 取中間點，然後把左&右半部分別在放入下一round繼續去做
+
 //Divide and Conquer 
 var sortedArrayToBST = function(nums) {
     function setTree(array, start, end){
