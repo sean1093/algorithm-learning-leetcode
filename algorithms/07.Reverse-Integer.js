@@ -3,6 +3,12 @@
  * @param {number} x
  * @return {number}
  */
+
+// Q: 反轉數字
+// A: 利用計算來反轉
+// 1. 先把負號取出來
+// 2. 每次除以10的最高位數次方，把它轉移到最低位數
+
 var reverse = function(x) {
     var INT_MAX = Math.pow(2,31)-1; //overflows
     var flag = true, n = 0, i = 0;    
