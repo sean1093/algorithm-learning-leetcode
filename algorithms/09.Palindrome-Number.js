@@ -1,9 +1,16 @@
 /**
  * 09. Palindrome Number
  * Determine whether an integer is a palindrome. Do this without extra space.
+ 
  * @param {number} x
  * @return {boolean}
  */
+
+// Q: 檢查數字是不是迴文
+// A: 把原始x值做反轉來比較，假如一致就是迴文
+// 1. 先把負號取出來
+// 2. 每次除以10的最高位數次方，把它轉移到最低位數
+
 var isPalindrome = function(x) {
     
 	//07. Reverse digits of an integer.
