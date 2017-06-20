@@ -10,6 +10,11 @@
  * @param {number} val
  * @return {number}
  */
+
+// Q: 刪除陣列中給予的值，並且回傳長度
+// A: 從頭掃到尾，當發現值不等於val時，就把count++，並且把這個值放到nums[count]裡面，這樣就可以刪掉等於的數值
+
+
 var removeElement = function(nums, val) {
     if(nums.length < 1) return 0;
     var count = 0; 
