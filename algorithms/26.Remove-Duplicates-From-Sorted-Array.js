@@ -16,9 +16,9 @@
 // 3: i != i+1 (2!=null) count++ => 2 此時把 null放到nums[2] 就變成[1,2,null] count = 2 
 
 var removeDuplicates = function(nums) {
-	if(nums === null || nums.length === 0) return 0;
-	if(nums.length == 1) return 1;
-	var count = 0;
+    if(nums === null || nums.length === 0) return 0;
+    if(nums.length == 1) return 1;
+    var count = 0;
     for(var i = 0; i< nums.length; i++) {
         if(nums[i] != nums[i+1]){
             count ++;
