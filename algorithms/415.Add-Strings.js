@@ -7,6 +7,7 @@
  * @param {string} num2
  * @return {string}
  */
+
 var addStrings = function(num1, num2) {
     num1 = num1.split("");
     num2 = num2.split("");
