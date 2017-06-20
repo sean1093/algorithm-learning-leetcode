@@ -6,6 +6,15 @@
  * @param {number[]} nums
  * @return {number}
  */
+
+// Q: 刪除排序好陣列中重複的元素(只留下一個)
+// A: 因為是排序好的陣列，所以相同的元素一定會排在一起
+// 只要發現第i個與i+1不相等的時候就把count++，並且讓下一個值放到第count個
+// ex: [1,1,2]
+// 1: i = i+1 (1=1) 所以不做事
+// 2: i != i+1 (1!=2) count++ => 1 此時把 2放到nums[1] 就變成[1,2,2] count = 1
+// 3: i != i+1 (2!=null) count++ => 2 此時把 null放到nums[2] 就變成[1,2,null] count = 2 
+
 var removeDuplicates = function(nums) {
 	if(nums === null || nums.length === 0) return 0;
 	if(nums.length == 1) return 1;
