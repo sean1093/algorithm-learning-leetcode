@@ -4,6 +4,13 @@
  * @param {string} str
  * @return {number}
  */
+// Q: 實作將 string 轉換為數值
+// A: 
+// 1. 把string先轉成 string[]
+// 2. 判斷文字前面出現非數字的情況，例如空白或是正負號。同時把正負數記錄下來
+// 3. 開始檢查數值，當出現空白或是非數值就結束，每次數值乘上 10 的剩餘長度-1次方
+// 4. 最後return之前還要先檢查有沒有超過上下限
+
 var myAtoi = function(str) {
     var INT_MAX = Math.pow(2,31)-1; //overflows
     var l = str.length;
