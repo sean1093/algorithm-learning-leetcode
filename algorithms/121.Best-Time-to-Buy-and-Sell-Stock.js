@@ -5,7 +5,10 @@
  * @param {number[]} prices
  * @return {number}
  */
-// 在每次移動的時候，先找尋最小值，再利用目前的值去剪更新過後的最小值來找最大值
+
+// Q: 找出買賣股票最大利益，何時買與賣 (陣列表示當天的股票價格)
+// A: 在每次移動的時候，先找尋最小值(min)，再利用目前的值(prices[i])，去減更新過後的最小值來找最大值(profit)
+
 var maxProfit = function(prices) {
     if (prices.length < 2) return 0;
     var min = Math.pow(2,31)-1; //overflows
