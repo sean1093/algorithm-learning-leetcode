@@ -4,7 +4,10 @@
  * @param {string} s
  * @return {number}
  */
-// AB = (A)26^(1)*(code-64) + (B)26^(0)*(code-64)  = 26*1 + 1*2 = 28
+
+// Q: 給 Excel 上面的 title，回傳他實際的值
+// A: 規則：AB = (A)26^(1)*(code-64) + (B)26^(0)*(code-64)  = 26*1 + 1*2 = 28
+
 var titleToNumber = function(s) {
     var str = s.split("");
     var result = 0;

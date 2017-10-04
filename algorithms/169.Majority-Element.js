@@ -5,7 +5,11 @@
  * @param {number[]} nums
  * @return {number}
  */
+
+// Q: 找出陣列中的 majority element (超過一半都是這個數字)
+// A: 先排序，中間值就一定是 majority element
 // sort -> the center element must be Majority Element
+
 var majorityElement = function(nums) {
     function sortNumber(a,b){
         return a - b;

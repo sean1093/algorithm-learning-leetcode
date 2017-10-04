@@ -4,8 +4,14 @@
  * @param {number} n
  * @return {string}
  */
- // Base 26 and use UTF-8 C0 Controls and Basic Latin
- //https://www.w3schools.com/charsets/ref_utf_basic_latin.asp
+// Q: 輸入數值，回傳對應的 Excel 規則 header
+// A: 根據 UTF-8 Basic Latin，大寫 A: Dec = 65
+// 並且利用 String.fromCharCode(n)，傳入 Dec code 來找對應的大寫字母
+// Base 26 and use UTF-8 C0 Controls and Basic Latin
+// https://www.w3schools.com/charsets/ref_utf_basic_latin.asp
+// 每次都除 26，分別把餘數去轉換成字母，並且看看有沒有超過 26 (透過 n/26>0?)
+// 假如有超過26，表示他不只一層，把新的n再去做上一個步驟，轉乘字母的餘數就放到res不斷累加
+
 var convertToTitle = function(n) {
     var res = "";
     while(n > 0) {
