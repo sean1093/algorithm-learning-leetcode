@@ -1,6 +1,7 @@
 /**
  * 189. Rotate Array
  * Rotate an array of n elements to the right by k steps.
+ * For example, with n = 7 and k = 3, the array [1,2,3,4,5,6,7] is rotated to [5,6,7,1,2,3,4].
  * @param {number[]} nums
  * @param {number} k
  * @return {void} Do not return anything, modify nums in-place instead.
@@ -13,6 +14,8 @@ var rotate1 = function(nums, k) {
         nums.unshift(value);
     }
 };
+
+// 這個有點不太一樣，再檢查
 //參考解法二的思路：https://github.com/julycoding/The-Art-Of-Programming-By-July/blob/master/ebook/zh/01.01.md
 // abcdef, k=2 -> reverse 2 part: cba|fed  -> reverse one more time: defabc
 var rotate = function(nums, k) {
