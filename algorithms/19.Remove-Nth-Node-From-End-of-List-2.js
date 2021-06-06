@@ -36,6 +36,37 @@ const removeNthFromEnd = (head, n) => {
     return dummy.next;
 };
 
+/**
+ * 1. 先算長度
+ * 2. 根據長度找出目標 node
+ * 3. 迴圈到標 node 前一個後，把 next 指到目標 node的next(next.next)
+ */
+ const removeNthFromEnd = function(head, n) {
+    // init
+    let list = new ListNode(0);
+    list.next = head;  
+    let targetList = head;
+
+    // get length
+    let length = 0;
+    while (targetList) {
+       length ++;
+       targetList = targetList.next;
+    }
+
+    // get remove target
+    targetList = list;
+    const target = length - n;
+
+    // remove
+    for (let i = 0; i < target; i++) {
+        targetList = targetList.next;
+    }
+    targetList.next = targetList.next.next;
+    
+    return list.next;
+};
+
 // Definition for singly-linked list.
 function ListNode(val) {
     this.val = val;
