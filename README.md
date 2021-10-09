@@ -1,3 +1,1 @@
-# leetcode
-
-leetcode answers in JavaScript
+# Algorithm Learning with leetcode
