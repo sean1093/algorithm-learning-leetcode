@@ -1,4 +1,4 @@
-# 5902. Check if Numbers Are Ascending in a Sentence
+# 2042. Check if Numbers Are Ascending in a Sentence
 
 A sentence is a list of tokens separated by a single space with no leading or trailing spaces. Every token is either a positive number consisting of digits 0-9 with no leading zeros, or a word consisting of lowercase English letters.
 
@@ -66,6 +66,25 @@ var areNumbersAscending = function(s) {
     for(let i=0; i<str.length-1; i++) {
         if(result[i+1] <= result[i]) return false
     }
+    return true;
+};
+```
+
+More efficient way
+```js
+var areNumbersAscending = function(s) {
+    const str = s.split(' ');
+    let curr = 0;
+    for(let i=0; i<str.length; i++) {
+        const now = (+str[i]);
+        if(!isNaN(now)) {
+            if(now <= curr) {
+                return false;
+            }
+            curr = now;
+        }
+    }
+
     return true;
 };
 ```
