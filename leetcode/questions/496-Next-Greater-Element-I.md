@@ -115,10 +115,10 @@ enhance: O(nums1.length + nums2.length)?
 
 #### Dry run:
 nums1 = [4,1,2], nums2 = [1,3,4,2]
-- i=3 value=2 [_,_,-1,_,_] mono=[2]
-- i=2 value=4 [_,_,-1,_,-1] mono=[4]
-- i=1 value=3 [_,_,-1,4,-1] mono=[4,3]
-- i=0 value=1 [_,3,-1,4,-1] mono=[4,3,1]
+- i=3 value=2 [x,x,-1,x,x] mono=[2]
+- i=2 value=4 [x,x,-1,x,-1] mono=[4]
+- i=1 value=3 [x,x,-1,4,-1] mono=[4,3]
+- i=0 value=1 [x,3,-1,4,-1] mono=[4,3,1]
 
 ```js
 /**
