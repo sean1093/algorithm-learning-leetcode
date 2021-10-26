@@ -34,7 +34,7 @@ const dfs = (root) => {
     while (stack.length > 0){
         const node = stack[stack.length - 1];
         stack.pop();
-        result.push(node.val);
+        res.push(node.val);
 
         if (node.right !== null) {
             stack.push(node.right);
