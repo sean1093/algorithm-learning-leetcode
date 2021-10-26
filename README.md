@@ -23,6 +23,11 @@
 ### Stack and Queue
 
 - [Monotonic Stack](algorithm-notes/stack_queue/monotonic-stack.md)
+
+### Traversal
+
+- [DFS](algorithm-notes/traversal/bfs.md)
+- [BFS](algorithm-notes/traversal/bfs.md)
 ## Leetcode Learning Notes
 
 ### Pattern
