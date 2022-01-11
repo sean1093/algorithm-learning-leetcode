@@ -112,5 +112,5 @@ var findKthPositive = function (arr, k) {
 
 ```
 
-* Time: O(n), runtime: 76 ms
+* Time: O(logn), runtime: 76 ms
 * Space: O(1)
