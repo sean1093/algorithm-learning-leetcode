@@ -31,6 +31,14 @@ Constraints:
 
 ## Solution
 
+note
+- 1 step / 2 steps
+- n =1 => 1
+
+algo
+- foreach 0~n
+- n = n-1 + n-2
+
 ```js
 /**
  * @param {number} n
